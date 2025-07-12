@@ -26,5 +26,10 @@ RUN GITLEAKS_VERSION="8.18.2" && \
     mv gitleaks /usr/local/bin/gitleaks && \
     rm gitleaks.tar.gz
 
+# Install Open Policy Agent (OPA)
+RUN curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64_static && \
+    chmod +x opa && \
+    mv opa /usr/local/bin/opa
+
 # Switch back to the non-root 'vscode' user for security
 USER vscode

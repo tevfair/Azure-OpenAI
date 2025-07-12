@@ -1,5 +1,5 @@
 {
-  "name": "Terraform Environment",
+  "name": "Custom Azure & Terraform Environment",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -17,7 +17,8 @@
     "hashicorp.terraform",
     "github.copilot",
     "bridgecrew.checkov",
-    "github.gitleaks"
+    "github.gitleaks",
+    "torutsumi.opa"
   ],
   "postCreateCommand": "npm install -g pnpm azure-functions-core-tools@4 && pip3 install --user checkov",
   "remoteUser": "vscode"
