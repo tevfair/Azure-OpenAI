@@ -1,0 +1,24 @@
+{
+  "name": "Terraform Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-vscode.azurecli",
+    "ms-azuretools.vscode-azurefunctions",
+    "hashicorp.terraform",
+    "github.copilot",
+    "bridgecrew.checkov",
+    "github.gitleaks"
+  ],
+  "postCreateCommand": "npm install -g pnpm azure-functions-core-tools@4 && pip3 install --user checkov",
+  "remoteUser": "vscode"
+}
