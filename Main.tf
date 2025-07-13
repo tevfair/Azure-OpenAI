@@ -112,7 +112,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "cog_dns_link" {
 }
 
 resource "azurerm_private_dns_a_record" "cog_dns_record" {
-  name                = azurerm_cognitive_account.openai.custom_subdomain_name # FIX: Use the custom subdomain for the DNS record
+  name                = azurerm_cognitive_account.openai.custom_subdomain_name
   zone_name           = azurerm_private_dns_zone.cog_dns.name
   resource_group_name = azurerm_resource_group.example.name
   ttl                 = 300
