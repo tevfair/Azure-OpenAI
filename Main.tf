@@ -12,7 +12,7 @@ resource "azurerm_key_vault" "openai_kv" {
   tenant_id                 = data.azurerm_client_config.current.tenant_id
   sku_name                  = "standard"
   
-  # FIX: Enable Soft Delete and Purge Protection as required for CMK
+  # Soft Delete and Purge Protection are required for CMK
   soft_delete_retention_days = 7
   purge_protection_enabled   = true
 
@@ -80,8 +80,6 @@ resource "azurerm_cognitive_account_customer_managed_key" "openai_cmk" {
   cognitive_account_id = azurerm_cognitive_account.openai.id
   key_vault_key_id     = azurerm_key_vault_key.openai_key.id
 
-  # FIX: Added an explicit dependency to ensure the role assignment is complete
-  # before attempting to associate the key.
   depends_on = [
     azurerm_role_assignment.cog_account_crypto_officer
   ]

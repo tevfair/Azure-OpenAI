@@ -9,12 +9,16 @@
     }
   },
   "remoteEnv": {
+    // Ensure to add the TF_API_TOKEN secret in your codespaces github setings (under secrets)!
     "TF_API_TOKEN": "${secrets.TF_API_TOKEN}"
   },
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "git.autofetch": true,
+        "git.autofetchPeriod": 180,
+        "git.pruneOnFetch": true
       },
       "extensions": [
         "ms-vscode.azurecli",
