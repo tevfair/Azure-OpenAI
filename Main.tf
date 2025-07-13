@@ -3,6 +3,9 @@ data "azurerm_client_config" "current" {}
 resource "azurerm_resource_group" "example" {
   name     = "Cogservices-openai-1"
   location = "East US"
+  tags = {
+    environment = "dev"
+  }
 }
 
 resource "azurerm_key_vault" "openai_kv" {
