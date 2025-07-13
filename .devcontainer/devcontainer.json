@@ -31,7 +31,8 @@
         "torutsumi.opa",
         "GitHub.vscode-github-actions",
         "ms-windows-ai.ai-toolkit",
-        "ms-azuretools.azure-ai-foundry-vscode"
+        "ms-azuretools.azure-ai-foundry-vscode",
+        "ms-azuretools.vscode-docker"
       ]
     }
   },
