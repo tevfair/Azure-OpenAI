@@ -33,3 +33,4 @@
   "postCreateCommand": "npm install -g pnpm azure-functions-core-tools@4 && pip3 install --user checkov && mkdir -p ~/.terraform.d && printf '{\n  \"credentials\": {\n    \"app.terraform.io\": {\n      \"token\": \"%s\"\n    }\n  }\n}' \"$TF_API_TOKEN\" > ~/.terraform.d/credentials.tfrc.json",
   "remoteUser": "vscode"
 }
+
