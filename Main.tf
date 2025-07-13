@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "example" {
 }
 
 resource "azurerm_key_vault" "openai_kv" {
-  name                      = "kv-cogacct-0"
+  name                      = "kv-cogacct-0" #If deleted prior, this may need to be changed or the old vauld will need to be recovered.
   location                  = azurerm_resource_group.example.location
   resource_group_name       = azurerm_resource_group.example.name
   tenant_id                 = data.azurerm_client_config.current.tenant_id
